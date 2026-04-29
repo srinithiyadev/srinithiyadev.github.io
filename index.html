@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srinithiya M — DevOps & Cloud Engineer</title>
+<meta name="description" content="DevOps and Cloud Engineer skilled in AWS, Kubernetes, Docker, CI/CD, Terraform and Prometheus. Open to junior DevOps roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --surface: #ffffff;
+    --text: #1a1a18;
+    --muted: #6b6b65;
+    --accent: #1a56db;
+    --accent-light: #e8f0fe;
+    --border: rgba(0,0,0,0.08);
+    --mono: 'DM Mono', monospace;
+    --sans: 'Sora', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(247,246,242,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { font-family: var(--mono); font-size: 12px; background: var(--text); color: var(--bg); padding: 8px 18px; border-radius: 4px; text-decoration: none; transition: opacity 0.2s; }
+  .nav-cta:hover { opacity: 0.8; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 2.5rem 4rem;
+    max-width: 1100px; margin: 0 auto;
+    position: relative;
+  }
+  .hero-inner { max-width: 700px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    background: var(--accent-light); color: var(--accent);
+    padding: 6px 14px; border-radius: 100px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 600; line-height: 1.1; letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero-sub {
+    font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 520px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-family: var(--sans); font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-dark { background: var(--text); color: var(--bg); }
+  .btn-dark:hover { background: #333; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost:hover { background: var(--surface); transform: translateY(-1px); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 4rem;
+    padding-top: 2rem; border-top: 1px solid var(--border);
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat-num { font-size: 28px; font-weight: 600; color: var(--text); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .hero-graphic {
+    position: absolute; right: 2.5rem; top: 50%; transform: translateY(-50%);
+    width: 340px; height: 340px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .terminal {
+    width: 300px; font-family: var(--mono); font-size: 12px; line-height: 1.8;
+  }
+  .t-bar { display: flex; gap: 6px; margin-bottom: 14px; }
+  .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .t-red { background: #ff5f57; } .t-yellow { background: #febc2e; } .t-green { background: #28c840; }
+  .t-line { color: var(--muted); }
+  .t-cmd { color: var(--accent); }
+  .t-out { color: #22c55e; }
+  .t-out2 { color: var(--text); }
+  .cursor { display: inline-block; width: 7px; height: 14px; background: var(--accent); animation: blink 1s infinite; vertical-align: middle; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* SECTIONS */
+  section { padding: 6rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .section-tag { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .section-title { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 3rem; }
+  hr.sep { border: none; border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+
+  /* SKILLS */
+  .skills-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .skill-block { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .skill-block:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .skill-icon { font-size: 22px; margin-bottom: 0.75rem; }
+  .skill-name { font-size: 13px; font-weight: 600; margin-bottom: 0.5rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .skill-tag { font-family: var(--mono); font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; color: var(--muted); }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .proj { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .proj:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
+  .proj-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .proj-emoji { font-size: 28px; }
+  .proj-links { display: flex; gap: 8px; }
+  .proj-link-btn { font-family: var(--mono); font-size: 11px; padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); color: var(--muted); text-decoration: none; transition: all 0.2s; background: var(--bg); }
+  .proj-link-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .proj h3 { font-size: 16px; font-weight: 600; }
+  .proj p { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
+  .proj-metrics { display: flex; flex-wrap: wrap; gap: 6px; }
+  .proj-metric { font-family: var(--mono); font-size: 11px; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 100px; }
+  .proj-stack { display: flex; flex-wrap: wrap; gap: 5px; }
+  .stack-tag { font-family: var(--mono); font-size: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px; color: var(--muted); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .about-text p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+  .about-text strong { color: var(--text); }
+  .certs { display: flex; flex-direction: column; gap: 10px; }
+  .cert { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; }
+  .cert-icon { font-size: 20px; }
+  .cert-name { font-size: 13px; font-weight: 500; }
+  .cert-org { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+  .edu { display: flex; flex-direction: column; gap: 12px; margin-top: 1.5rem; }
+  .edu-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .edu-deg { font-size: 13px; font-weight: 600; }
+  .edu-school { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .edu-yr { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-top: 4px; }
+
+  /* CONTACT */
+  .contact-wrap { background: var(--text); color: var(--bg); border-radius: 20px; padding: 4rem 3rem; text-align: center; }
+  .contact-wrap .section-tag { color: #8ab4f8; }
+  .contact-wrap h2 { color: var(--bg); margin-bottom: 1rem; }
+  .contact-wrap p { color: rgba(255,255,255,0.6); font-size: 15px; max-width: 480px; margin: 0 auto 2.5rem; }
+  .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.2s; }
+  .contact-btn-light { background: var(--bg); color: var(--text); }
+  .contact-btn-light:hover { background: #e8e8e4; }
+  .contact-btn-outline { background: transparent; color: var(--bg); border: 1px solid rgba(255,255,255,0.2); }
+  .contact-btn-outline:hover { background: rgba(255,255,255,0.08); }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem; font-family: var(--mono); font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.25rem 3rem; }
+    .hero-graphic { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-wrap { padding: 2.5rem 1.5rem; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">srinithiya.m</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:srinithiyaofficial@gmail.com">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Open to DevOps &amp; Cloud roles
+    </div>
+    <h1>DevOps &amp; <em>Cloud</em><br>Engineer</h1>
+    <p class="hero-sub">Building scalable cloud-native infrastructure on AWS with Kubernetes, automated CI/CD pipelines, and real-time observability using Prometheus &amp; Grafana.</p>
+    <div class="hero-btns">
+      <a class="btn btn-dark" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/srinithiya-m-081243291/" target="_blank">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/srinithiyadev" target="_blank">GitHub ↗</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Production Projects</div>
+      </div>
+      <div>
+        <div class="stat-num">83%</div>
+        <div class="stat-label">Deployment Time Cut</div>
+      </div>
+      <div>
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Faster Incident Detection</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-graphic">
+    <div class="terminal">
+      <div class="t-bar">
+        <div class="t-dot t-red"></div>
+        <div class="t-dot t-yellow"></div>
+        <div class="t-dot t-green"></div>
+      </div>
+      <div class="t-line">$ <span class="t-cmd">kubectl get pods -n prod</span></div>
+      <div class="t-out">✓ url-shortener   Running</div>
+      <div class="t-out">✓ cloudoptima     Running</div>
+      <div class="t-out">✓ todo-app        Running</div>
+      <div class="t-line" style="margin-top:8px">$ <span class="t-cmd">terraform apply</span></div>
+      <div class="t-out2">Apply complete! 4 added.</div>
+      <div class="t-line" style="margin-top:8px">$ <span class="t-cmd">docker build .</span></div>
+      <div class="t-out">Successfully built 3f9a2c1</div>
+      <div class="t-line" style="margin-top:8px">$ <span class="t-cmd"></span><span class="cursor"></span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="sep">
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-tag reveal">Tools &amp; Technologies</div>
+  <h2 class="section-title reveal">Technical Skills</h2>
+  <div class="skills-wrap">
+    <div class="skill-block reveal">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-name">Cloud Platforms</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS EC2</span><span class="skill-tag">S3</span><span class="skill-tag">IAM</span><span class="skill-tag">EKS</span><span class="skill-tag">VPC</span><span class="skill-tag">Azure</span>
+      </div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">🐳</div>
+      <div class="skill-name">Containers &amp; Orchestration</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">EKS</span><span class="skill-tag">Minikube</span><span class="skill-tag">Helm</span>
+      </div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">⚙️</div>
+      <div class="skill-name">CI/CD &amp; Automation</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Jenkins</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Puppet</span><span class="skill-tag">Webhooks</span>
+      </div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">🏗️</div>
+      <div class="skill-name">Infrastructure as Code</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span>
+      </div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Monitoring</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Prometheus</span><span class="skill-tag">Grafana</span><span class="skill-tag">CloudWatch</span>
+      </div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">💻</div>
+      <div class="skill-name">Programming</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">Shell/Bash</span><span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-name">Databases</div>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span>
+      </div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-name">Networking &amp; OS</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Linux</span><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">HTTP/S</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-tag reveal">What I've Built</div>
+  <h2 class="section-title reveal">Projects</h2>
+  <div class="projects-grid">
+
+    <div class="proj reveal">
+      <div class="proj-top">
+        <div class="proj-emoji">🔗</div>
+        <div class="proj-links">
+          <a class="proj-link-btn" href="https://github.com/srinithiyadev/url-shortener-devops" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+      <h3>URL Shortener — DevOps &amp; Monitoring</h3>
+      <p>Production-grade URL shortener deployed on AWS EKS. Full CI/CD with Jenkins, Docker, and real-time observability with Prometheus &amp; Grafana. Exposed via Kubernetes LoadBalancer service.</p>
+      <div class="proj-metrics">
+        <span class="proj-metric">30% faster incident detection</span>
+      </div>
+      <div class="proj-stack">
+        <span class="stack-tag">Python Flask</span><span class="stack-tag">Docker</span><span class="stack-tag">Kubernetes</span><span class="stack-tag">AWS EKS</span><span class="stack-tag">Jenkins</span><span class="stack-tag">Prometheus</span><span class="stack-tag">Grafana</span><span class="stack-tag">PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div class="proj-top">
+        <div class="proj-emoji">🚀</div>
+        <div class="proj-links">
+          <a class="proj-link-btn" href="https://github.com/srinithiyadev/todo-app-cicd-aws-deployment" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+      <h3>Automated CI/CD Pipeline — To-Do App</h3>
+      <p>End-to-end automated CI/CD pipeline with Jenkins. Containerized Flask app on AWS EC2, DockerHub integration, and GitHub webhook triggers — zero manual intervention on every code push.</p>
+      <div class="proj-metrics">
+        <span class="proj-metric">2hrs → 10min deploy</span>
+        <span class="proj-metric">83% faster</span>
+      </div>
+      <div class="proj-stack">
+        <span class="stack-tag">Jenkins</span><span class="stack-tag">Docker</span><span class="stack-tag">AWS EC2</span><span class="stack-tag">DockerHub</span><span class="stack-tag">Flask</span>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div class="proj-top">
+        <div class="proj-emoji">💰</div>
+        <div class="proj-links">
+          <a class="proj-link-btn" href="https://github.com/srinithiyadev/cloudoptima" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+      <h3>CloudOptima — Multi-Cloud Cost Monitor</h3>
+      <p>Multi-cloud cost monitoring platform using AWS boto3. Flask REST API with PostgreSQL for idle resource detection. Brevo API for automated email alerts. Deployed on Vercel &amp; Render with CI/CD.</p>
+      <div class="proj-metrics">
+        <span class="proj-metric">40% less manual tracking</span>
+      </div>
+      <div class="proj-stack">
+        <span class="stack-tag">Python</span><span class="stack-tag">Flask</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">AWS boto3</span><span class="stack-tag">Brevo API</span><span class="stack-tag">Vercel</span><span class="stack-tag">Render</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag reveal">Who I Am</div>
+  <h2 class="section-title reveal">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm <strong>Srinithiya M</strong>, a fresher DevOps &amp; Cloud Engineer from Thanjavur, Tamil Nadu. I'm passionate about building infrastructure that is reliable, scalable, and automated.</p>
+      <p>I built all my projects <strong>without tutorials</strong> — using documentation, problem-solving, and AI tools to find solutions independently. I'm comfortable with the full DevOps lifecycle from writing code to deploying and monitoring in production.</p>
+      <p>Currently pursuing my <strong>Master of Science in Computer Science</strong> at Bishop Heber College, Tiruchirappalli. Actively looking for junior DevOps, Cloud, or SRE roles.</p>
+      <div class="edu">
+        <div class="edu-item">
+          <div class="edu-deg">M.Sc. Computer Science</div>
+          <div class="edu-school">Bishop Heber College, Tiruchirappalli</div>
+          <div class="edu-yr">2024 – 2026 · 76.50%</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-deg">B.Sc. Computer Science</div>
+          <div class="edu-school">PRIST University, Thanjavur</div>
+          <div class="edu-yr">2021 – 2024 · 76.10%</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;font-family:var(--mono)">// Certifications</p>
+      <div class="certs">
+        <div class="cert">
+          <div class="cert-icon">🏅</div>
+          <div>
+            <div class="cert-name">Jenkins for Beginners</div>
+            <div class="cert-org">SimpliLearn · 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-icon">🏅</div>
+          <div>
+            <div class="cert-name">Python Programming</div>
+            <div class="cert-org">Scaler · 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-icon">🏅</div>
+          <div>
+            <div class="cert-name">Linux Fundamentals</div>
+            <div class="cert-org">Alison · 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-icon">🏅</div>
+          <div>
+            <div class="cert-name">Docker for Developers</div>
+            <div class="cert-org">Le Wagon · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- CONTACT -->
+<section id="contact" style="padding-bottom: 4rem;">
+  <div class="contact-wrap reveal">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title" style="margin-bottom:1rem;">Let's Work Together</h2>
+    <p>I'm actively looking for junior DevOps, Cloud Engineer, or SRE roles. If you're hiring or want to collaborate, feel free to reach out!</p>
+    <div class="contact-links">
+      <a class="contact-btn contact-btn-light" href="mailto:srinithiyaofficial@gmail.com">
+        ✉️ srinithiyaofficial@gmail.com
+      </a>
+      <a class="contact-btn contact-btn-outline" href="https://www.linkedin.com/in/srinithiya-m-081243291/" target="_blank">
+        LinkedIn ↗
+      </a>
+      <a class="contact-btn contact-btn-outline" href="https://github.com/srinithiyadev" target="_blank">
+        GitHub ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built by Srinithiya M · Thanjavur, Tamil Nadu, India · 2025
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
