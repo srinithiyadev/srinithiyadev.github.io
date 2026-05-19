@@ -86,7 +86,7 @@
   .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
   .hero-graphic {
     position: absolute; right: 2.5rem; top: 50%; transform: translateY(-50%);
-    width: 340px; height: 340px;
+    width: 340px; height: 360px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -130,6 +130,7 @@
   .proj-links { display: flex; gap: 8px; }
   .proj-link-btn { font-family: var(--mono); font-size: 11px; padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); color: var(--muted); text-decoration: none; transition: all 0.2s; background: var(--bg); }
   .proj-link-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .proj-new-badge { font-family: var(--mono); font-size: 10px; background: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; border-radius: 100px; padding: 3px 10px; }
   .proj h3 { font-size: 16px; font-weight: 600; }
   .proj p { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
   .proj-metrics { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -146,6 +147,7 @@
   .cert-icon { font-size: 14px; color: var(--accent); font-family: var(--mono); }
   .cert-name { font-size: 13px; font-weight: 500; }
   .cert-org { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+  .cert-new { font-family: var(--mono); font-size: 9px; background: #dcfce7; color: #16a34a; border-radius: 100px; padding: 1px 7px; margin-left: 6px; vertical-align: middle; }
   .edu { display: flex; flex-direction: column; gap: 12px; margin-top: 1.5rem; }
   .edu-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
   .edu-deg { font-size: 13px; font-weight: 600; }
@@ -216,7 +218,7 @@
     </div>
     <div class="hero-stats">
       <div>
-        <div class="stat-num">3</div>
+        <div class="stat-num">4</div>
         <div class="stat-label">Production Projects</div>
       </div>
       <div>
@@ -238,12 +240,13 @@
       </div>
       <div class="t-line">$ <span class="t-cmd">kubectl get pods -n prod</span></div>
       <div class="t-out">&gt; url-shortener   Running</div>
+      <div class="t-out">&gt; ims-backend     Running</div>
       <div class="t-out">&gt; cloudoptima     Running</div>
       <div class="t-out">&gt; todo-app        Running</div>
       <div class="t-line" style="margin-top:8px">$ <span class="t-cmd">terraform apply</span></div>
       <div class="t-out2">Apply complete! 4 added.</div>
-      <div class="t-line" style="margin-top:8px">$ <span class="t-cmd">docker build .</span></div>
-      <div class="t-out">Successfully built 3f9a2c1</div>
+      <div class="t-line" style="margin-top:8px">$ <span class="t-cmd">docker compose up -d</span></div>
+      <div class="t-out">6 containers started</div>
       <div class="t-line" style="margin-top:8px">$ <span class="t-cmd"></span><span class="cursor"></span></div>
     </div>
   </div>
@@ -256,62 +259,108 @@
   <div class="section-tag reveal">Tools &amp; Technologies</div>
   <h2 class="section-title reveal">Technical Skills</h2>
   <div class="skills-wrap">
+
     <div class="skill-block reveal">
-      
       <div class="skill-name">Cloud Platforms</div>
       <div class="skill-tags">
-        <span class="skill-tag">AWS EC2</span><span class="skill-tag">S3</span><span class="skill-tag">IAM</span><span class="skill-tag">EKS</span><span class="skill-tag">VPC</span><span class="skill-tag">Azure</span>
+        <span class="skill-tag">AWS EC2</span>
+        <span class="skill-tag">S3</span>
+        <span class="skill-tag">IAM</span>
+        <span class="skill-tag">EKS</span>
+        <span class="skill-tag">VPC</span>
+        <span class="skill-tag">boto3</span>
+        <span class="skill-tag">CloudWatch</span>
       </div>
     </div>
+
     <div class="skill-block reveal">
-      
       <div class="skill-name">Containers &amp; Orchestration</div>
       <div class="skill-tags">
-        <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">EKS</span><span class="skill-tag">Minikube</span><span class="skill-tag">Helm</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Docker Compose</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">EKS</span>
+        <span class="skill-tag">Minikube</span>
+        <span class="skill-tag">Helm</span>
       </div>
     </div>
+
     <div class="skill-block reveal">
-      
       <div class="skill-name">CI/CD &amp; Automation</div>
       <div class="skill-tags">
-        <span class="skill-tag">Jenkins</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Puppet</span><span class="skill-tag">Webhooks</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">Webhooks</span>
+        <span class="skill-tag">DockerHub</span>
       </div>
     </div>
+
     <div class="skill-block reveal">
-      
       <div class="skill-name">Infrastructure as Code</div>
       <div class="skill-tags">
-        <span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">Ansible</span>
       </div>
     </div>
+
     <div class="skill-block reveal">
-      
-      <div class="skill-name">Monitoring</div>
+      <div class="skill-name">Monitoring &amp; Observability</div>
       <div class="skill-tags">
-        <span class="skill-tag">Prometheus</span><span class="skill-tag">Grafana</span><span class="skill-tag">CloudWatch</span>
+        <span class="skill-tag">Prometheus</span>
+        <span class="skill-tag">Grafana</span>
+        <span class="skill-tag">CloudWatch</span>
       </div>
     </div>
+
     <div class="skill-block reveal">
-      
       <div class="skill-name">Programming</div>
       <div class="skill-tags">
-        <span class="skill-tag">Python</span><span class="skill-tag">Shell/Bash</span><span class="skill-tag">SQL</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Shell / Bash</span>
+        <span class="skill-tag">SQL</span>
       </div>
     </div>
+
+    <!-- Frontend -->
     <div class="skill-block reveal">
-      
+      <div class="skill-name">Frontend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">React</span>
+      </div>
+    </div>
+
+    <!-- UPDATED: Databases — added Redis, MongoDB -->
+    <div class="skill-block reveal">
       <div class="skill-name">Databases</div>
       <div class="skill-tags">
-        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Redis</span>
       </div>
     </div>
+
+    <!-- NEW: Version Control & Registries -->
     <div class="skill-block reveal">
-      
+      <div class="skill-name">Version Control &amp; Registries</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">DockerHub</span>
+      </div>
+    </div>
+
+    <div class="skill-block reveal">
       <div class="skill-name">Networking &amp; OS</div>
       <div class="skill-tags">
-        <span class="skill-tag">Linux</span><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">HTTP/S</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">TCP/IP</span>
+        <span class="skill-tag">DNS</span>
+        <span class="skill-tag">HTTP/S</span>
+        <span class="skill-tag">Load Balancing</span>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -323,9 +372,35 @@
   <h2 class="section-title reveal">Projects</h2>
   <div class="projects-grid">
 
+    <!-- NEW PROJECT -->
     <div class="proj reveal">
       <div class="proj-top">
-        
+        <span class="proj-new-badge">New ✦</span>
+        <div class="proj-links">
+          <a class="proj-link-btn" href="https://github.com/srinithiyadev" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+      <h3>SRE Incident Management System</h3>
+      <p>Full-stack IMS with a state machine lifecycle (OPEN → INVESTIGATING → RESOLVED → CLOSED) with mandatory RCA enforcement and auto MTTR calculation. Redis-based signal debouncing reduces DB writes under high traffic. Async FastAPI backend with rate limiting and Redis Streams for backpressure — 6 services containerized with Docker Compose and full Prometheus + Grafana observability.</p>
+      <div class="proj-metrics">
+        <span class="proj-metric">12/12 unit tests passing</span>
+        <span class="proj-metric">6 services containerised</span>
+        <span class="proj-metric">Auto MTTR calc</span>
+      </div>
+      <div class="proj-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">MongoDB</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">Redis</span>
+        <span class="stack-tag">Docker Compose</span>
+        <span class="stack-tag">Prometheus</span>
+        <span class="stack-tag">Grafana</span>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div class="proj-top">
         <div class="proj-links">
           <a class="proj-link-btn" href="https://github.com/srinithiyadev/url-shortener-devops" target="_blank">GitHub ↗</a>
         </div>
@@ -336,13 +411,19 @@
         <span class="proj-metric">30% faster incident detection</span>
       </div>
       <div class="proj-stack">
-        <span class="stack-tag">Python Flask</span><span class="stack-tag">Docker</span><span class="stack-tag">Kubernetes</span><span class="stack-tag">AWS EKS</span><span class="stack-tag">Jenkins</span><span class="stack-tag">Prometheus</span><span class="stack-tag">Grafana</span><span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">Python Flask</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">Kubernetes</span>
+        <span class="stack-tag">AWS EKS</span>
+        <span class="stack-tag">Jenkins</span>
+        <span class="stack-tag">Prometheus</span>
+        <span class="stack-tag">Grafana</span>
+        <span class="stack-tag">PostgreSQL</span>
       </div>
     </div>
 
     <div class="proj reveal">
       <div class="proj-top">
-        
         <div class="proj-links">
           <a class="proj-link-btn" href="https://github.com/srinithiyadev/todo-app-cicd-aws-deployment" target="_blank">GitHub ↗</a>
         </div>
@@ -354,13 +435,16 @@
         <span class="proj-metric">83% faster</span>
       </div>
       <div class="proj-stack">
-        <span class="stack-tag">Jenkins</span><span class="stack-tag">Docker</span><span class="stack-tag">AWS EC2</span><span class="stack-tag">DockerHub</span><span class="stack-tag">Flask</span>
+        <span class="stack-tag">Jenkins</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">AWS EC2</span>
+        <span class="stack-tag">DockerHub</span>
+        <span class="stack-tag">Flask</span>
       </div>
     </div>
 
     <div class="proj reveal">
       <div class="proj-top">
-        
         <div class="proj-links">
           <a class="proj-link-btn" href="https://github.com/srinithiyadev/cloudoptima" target="_blank">GitHub ↗</a>
         </div>
@@ -371,7 +455,13 @@
         <span class="proj-metric">40% less manual tracking</span>
       </div>
       <div class="proj-stack">
-        <span class="stack-tag">Python</span><span class="stack-tag">Flask</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">AWS boto3</span><span class="stack-tag">Brevo API</span><span class="stack-tag">Vercel</span><span class="stack-tag">Render</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">AWS boto3</span>
+        <span class="stack-tag">Brevo API</span>
+        <span class="stack-tag">Vercel</span>
+        <span class="stack-tag">Render</span>
       </div>
     </div>
 
@@ -388,7 +478,7 @@
     <div class="about-text reveal">
       <p>I'm <strong>Srinithiya M</strong>, a DevOps & Cloud Engineer from Thanjavur, Tamil Nadu. I recently completed my <strong>Master of Science in Computer Science</strong> at Bishop Heber College, Tiruchirappalli.</p>
       <p>I'm passionate about building infrastructure that is reliable, scalable, and automated. I enjoy working across the full DevOps lifecycle — from writing code to deploying and monitoring applications in production.</p>
-     <p>I'm actively looking for junior <strong>DevOps, Cloud Engineer, or SRE roles</strong> where I can contribute and grow.</p>
+      <p>I'm actively looking for junior <strong>DevOps, Cloud Engineer, or SRE roles</strong> where I can contribute and grow.</p>
       <div class="edu">
         <div class="edu-item">
           <div class="edu-deg">M.Sc. Computer Science</div>
@@ -405,6 +495,14 @@
     <div class="reveal">
       <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;font-family:var(--mono)">// Certifications</p>
       <div class="certs">
+        <!-- NEW cert -->
+        <div class="cert">
+          <div class="cert-icon">—</div>
+          <div>
+            <div class="cert-name">Kubernetes: Your First Project <span class="cert-new">New</span></div>
+            <div class="cert-org">LinkedIn Learning · 2026</div>
+          </div>
+        </div>
         <div class="cert">
           <div class="cert-icon">—</div>
           <div>
