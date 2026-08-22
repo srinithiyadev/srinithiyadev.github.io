@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Srinithiya M — DevOps & Cloud Engineer</title>
+<title>Srinithiya M: DevOps & Cloud Engineer</title>
 <meta name="description" content="DevOps and Cloud Engineer skilled in AWS, Kubernetes, Docker, CI/CD, Terraform and Prometheus. Open to junior DevOps roles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +81,7 @@
     display: flex; gap: 2.5rem; margin-top: 4rem;
     padding-top: 2rem; border-top: 1px solid var(--border);
     animation: fadeUp 0.6s 0.4s ease both;
+    flex-wrap: wrap;
   }
   .stat-num { font-size: 28px; font-weight: 600; color: var(--text); }
   .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
@@ -111,6 +112,16 @@
   .section-tag { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
   .section-title { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 3rem; }
   hr.sep { border: none; border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+
+  /* EXPERIENCE */
+  .exp-item { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem 2rem; }
+  .exp-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem; }
+  .exp-role { font-size: 17px; font-weight: 600; }
+  .exp-org { font-size: 14px; color: var(--accent); font-family: var(--mono); margin-top: 2px; }
+  .exp-dates { font-family: var(--mono); font-size: 12px; color: var(--muted); background: var(--bg); padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
+  .exp-list { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 8px; }
+  .exp-list li { font-size: 14px; color: var(--muted); line-height: 1.6; padding-left: 1.2rem; position: relative; }
+  .exp-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
 
   /* SKILLS */
   .skills-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
@@ -158,7 +169,8 @@
   .contact-wrap { background: var(--text); color: var(--bg); border-radius: 20px; padding: 4rem 3rem; text-align: center; }
   .contact-wrap .section-tag { color: #8ab4f8; }
   .contact-wrap h2 { color: var(--bg); margin-bottom: 1rem; }
-  .contact-wrap p { color: rgba(255,255,255,0.6); font-size: 15px; max-width: 480px; margin: 0 auto 2.5rem; }
+  .contact-wrap p { color: rgba(255,255,255,0.6); font-size: 15px; max-width: 480px; margin: 0 auto 1.5rem; }
+  .contact-phone { font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
   .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
   .contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.2s; }
   .contact-btn-light { background: var(--bg); color: var(--text); }
@@ -184,6 +196,7 @@
     .about-grid { grid-template-columns: 1fr; }
     .contact-wrap { padding: 2.5rem 1.5rem; }
     .hero-stats { gap: 1.5rem; }
+    .exp-item { padding: 1.5rem; }
   }
 </style>
 </head>
@@ -192,6 +205,7 @@
 <nav>
   <div class="nav-logo">srinithiya.m</div>
   <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
@@ -209,7 +223,7 @@
       Open to DevOps &amp; Cloud roles
     </div>
     <h1>DevOps &amp; <em>Cloud</em><br>Engineer</h1>
-    <p class="hero-sub">Building scalable cloud-native infrastructure on AWS with Kubernetes, automated CI/CD pipelines, and real-time observability using Prometheus &amp; Grafana.</p>
+    <p class="hero-sub">M.Sc. Computer Science graduate with hands-on AWS cloud infrastructure experience, CI/CD automation, and full-stack observability with Prometheus &amp; Grafana, built through an AWS Cloud internship and four end-to-end DevOps/SRE projects.</p>
     <div class="hero-btns">
       <a class="btn btn-dark" href="#projects">View Projects</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/srinithiya-m-081243291/" target="_blank">LinkedIn ↗</a>
@@ -226,8 +240,8 @@
         <div class="stat-label">Deployment Time Cut</div>
       </div>
       <div>
-        <div class="stat-num">30%</div>
-        <div class="stat-label">Faster Incident Detection</div>
+        <div class="stat-num">1</div>
+        <div class="stat-label">AWS Cloud Internship</div>
       </div>
     </div>
   </div>
@@ -254,6 +268,30 @@
 
 <hr class="sep">
 
+<!-- EXPERIENCE (new, from resume) -->
+<section id="experience">
+  <div class="section-tag reveal">Where I've Worked</div>
+  <h2 class="section-title reveal">Experience</h2>
+  <div class="exp-item reveal">
+    <div class="exp-top">
+      <div>
+        <div class="exp-role">AWS Cloud Intern</div>
+        <div class="exp-org">Davine Technologies</div>
+      </div>
+      <div class="exp-dates">Jul 2026 – Present</div>
+    </div>
+    <ul class="exp-list">
+      <li>Architected and deployed secure AWS environments (EC2, VPC, IAM, ALB, and Auto Scaling) under mentor guidance.</li>
+      <li>Administered Linux EC2 instances with Apache/Nginx web servers, SSH access, and custom Bash User Data automation for environment setup.</li>
+      <li>Designed multi-tier VPC networks with public/private subnets, NAT/Internet Gateways, and Security Groups for production-style isolation.</li>
+      <li>Managed S3, EBS, EFS, RDS, and DynamoDB storage layers, including backup, snapshot, and bucket-policy configuration.</li>
+      <li>Built high-availability infrastructure with ALB, Target Groups, Auto Scaling Groups, and Multi-AZ failover.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="sep">
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-tag reveal">Tools &amp; Technologies</div>
@@ -266,8 +304,14 @@
         <span class="skill-tag">AWS EC2</span>
         <span class="skill-tag">S3</span>
         <span class="skill-tag">IAM</span>
+        <span class="skill-tag">RDS</span>
+        <span class="skill-tag">DynamoDB</span>
         <span class="skill-tag">EKS</span>
         <span class="skill-tag">VPC</span>
+        <span class="skill-tag">ALB</span>
+        <span class="skill-tag">Auto Scaling</span>
+        <span class="skill-tag">Route 53</span>
+        <span class="skill-tag">Lambda</span>
         <span class="skill-tag">boto3</span>
         <span class="skill-tag">CloudWatch</span>
       </div>
@@ -321,7 +365,6 @@
       </div>
     </div>
 
-    <!-- Frontend -->
     <div class="skill-block reveal">
       <div class="skill-name">Frontend</div>
       <div class="skill-tags">
@@ -329,7 +372,6 @@
       </div>
     </div>
 
-    <!-- UPDATED: Databases — added Redis, MongoDB -->
     <div class="skill-block reveal">
       <div class="skill-name">Databases</div>
       <div class="skill-tags">
@@ -340,7 +382,6 @@
       </div>
     </div>
 
-    <!-- NEW: Version Control & Registries -->
     <div class="skill-block reveal">
       <div class="skill-name">Version Control &amp; Registries</div>
       <div class="skill-tags">
@@ -351,9 +392,10 @@
     </div>
 
     <div class="skill-block reveal">
-      <div class="skill-name">Networking &amp; OS</div>
+      <div class="skill-name">Linux &amp; Networking</div>
       <div class="skill-tags">
-        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Linux Administration</span>
+        <span class="skill-tag">SSH</span>
         <span class="skill-tag">TCP/IP</span>
         <span class="skill-tag">DNS</span>
         <span class="skill-tag">HTTP/S</span>
@@ -372,7 +414,6 @@
   <h2 class="section-title reveal">Projects</h2>
   <div class="projects-grid">
 
-    <!-- NEW PROJECT -->
     <div class="proj reveal">
       <div class="proj-top">
         <span class="proj-new-badge">New ✦</span>
@@ -381,18 +422,15 @@
         </div>
       </div>
       <h3>SRE Incident Management System</h3>
-      <p>Full-stack IMS with a state machine lifecycle (OPEN → INVESTIGATING → RESOLVED → CLOSED) with mandatory RCA enforcement and auto MTTR calculation. Redis-based signal debouncing reduces DB writes under high traffic. Async FastAPI backend with rate limiting and Redis Streams for backpressure — 6 services containerized with Docker Compose and full Prometheus + Grafana observability.</p>
+      <p>Async, high-throughput incident platform on FastAPI and Redis Streams with rate limiting and signal debouncing. Containerized 6 microservices with automated MTTR tracking across a full OPEN → INVESTIGATING → RESOLVED → CLOSED lifecycle, backed by MongoDB and full Prometheus + Grafana observability.</p>
       <div class="proj-metrics">
-        <span class="proj-metric">12/12 unit tests passing</span>
         <span class="proj-metric">6 services containerised</span>
-        <span class="proj-metric">Auto MTTR calc</span>
+        <span class="proj-metric">Auto MTTR tracking</span>
       </div>
       <div class="proj-stack">
         <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">React</span>
+        <span class="stack-tag">Redis Streams</span>
         <span class="stack-tag">MongoDB</span>
-        <span class="stack-tag">PostgreSQL</span>
-        <span class="stack-tag">Redis</span>
         <span class="stack-tag">Docker Compose</span>
         <span class="stack-tag">Prometheus</span>
         <span class="stack-tag">Grafana</span>
@@ -405,10 +443,10 @@
           <a class="proj-link-btn" href="https://github.com/srinithiyadev/url-shortener-devops" target="_blank">GitHub ↗</a>
         </div>
       </div>
-      <h3>URL Shortener — DevOps &amp; Monitoring</h3>
-      <p>Production-grade URL shortener deployed on AWS EKS. Full CI/CD with Jenkins, Docker, and real-time observability with Prometheus &amp; Grafana. Exposed via Kubernetes LoadBalancer service.</p>
+      <h3>URL Shortener: Kubernetes DevOps Automation &amp; Monitoring</h3>
+      <p>Containerized application deployed on AWS EKS with an automated Jenkins pipeline (GitHub to DockerHub to EKS). Prometheus/Grafana observability dashboards monitor live application and infrastructure health.</p>
       <div class="proj-metrics">
-        <span class="proj-metric">30% faster incident detection</span>
+        <span class="proj-metric">AWS EKS</span>
       </div>
       <div class="proj-stack">
         <span class="stack-tag">Python Flask</span>
@@ -418,28 +456,27 @@
         <span class="stack-tag">Jenkins</span>
         <span class="stack-tag">Prometheus</span>
         <span class="stack-tag">Grafana</span>
-        <span class="stack-tag">PostgreSQL</span>
       </div>
     </div>
 
     <div class="proj reveal">
       <div class="proj-top">
         <div class="proj-links">
-          <a class="proj-link-btn" href="https://github.com/srinithiyadev/todo-app-cicd-aws-deployment" target="_blank">GitHub ↗</a>
+          <a class="proj-link-btn" href="https://github.com/srinithiyadev/iii-aws-deployment" target="_blank">GitHub ↗</a>
         </div>
       </div>
-      <h3>Automated CI/CD Pipeline — To-Do App</h3>
-      <p>End-to-end automated CI/CD pipeline with Jenkins. Containerized Flask app on AWS EC2, DockerHub integration, and GitHub webhook triggers — zero manual intervention on every code push.</p>
+      <h3>iii-aws-deployment: Terraform AWS Infrastructure</h3>
+      <p>Deploys a 3-VM AWS architecture with Terraform: a public API gateway VM and two private worker VMs with zero inbound internet access, connected outbound over a restricted WebSocket port. Includes redeploy and teardown workflows via Terraform taint/destroy.</p>
       <div class="proj-metrics">
-        <span class="proj-metric">2hrs → 10min deploy</span>
-        <span class="proj-metric">83% faster</span>
+        <span class="proj-metric">3-VM Terraform stack</span>
+        <span class="proj-metric">Zero inbound on workers</span>
       </div>
       <div class="proj-stack">
-        <span class="stack-tag">Jenkins</span>
-        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">Terraform</span>
         <span class="stack-tag">AWS EC2</span>
-        <span class="stack-tag">DockerHub</span>
-        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">Shell</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">TypeScript</span>
       </div>
     </div>
 
@@ -449,10 +486,10 @@
           <a class="proj-link-btn" href="https://github.com/srinithiyadev/cloudoptima" target="_blank">GitHub ↗</a>
         </div>
       </div>
-      <h3>CloudOptima — Multi-Cloud Cost Monitor</h3>
-      <p>Multi-cloud cost monitoring platform using AWS boto3. Flask REST API with PostgreSQL for idle resource detection. Brevo API for automated email alerts. Deployed on Vercel &amp; Render with CI/CD.</p>
+      <h3>CloudOptima: Multi-Cloud Cost Monitoring Platform</h3>
+      <p>Flask REST API with PostgreSQL to detect idle cloud resources and centralize multi-cloud cost insights. Integrated AWS Boto3 for real-time resource data and automated Brevo API email alerts on cloud-cost thresholds. Deployed on Vercel &amp; Render with CI/CD.</p>
       <div class="proj-metrics">
-        <span class="proj-metric">40% less manual tracking</span>
+        <span class="proj-metric">Idle resource detection</span>
       </div>
       <div class="proj-stack">
         <span class="stack-tag">Python</span>
@@ -477,8 +514,8 @@
   <div class="about-grid">
     <div class="about-text reveal">
       <p>I'm <strong>Srinithiya M</strong>, a DevOps & Cloud Engineer from Thanjavur, Tamil Nadu. I recently completed my <strong>Master of Science in Computer Science</strong> at Bishop Heber College, Tiruchirappalli.</p>
-      <p>I'm passionate about building infrastructure that is reliable, scalable, and automated. I enjoy working across the full DevOps lifecycle — from writing code to deploying and monitoring applications in production.</p>
-      <p>I'm actively looking for junior <strong>DevOps, Cloud Engineer, or SRE roles</strong> where I can contribute and grow.</p>
+      <p>I'm currently an <strong>AWS Cloud Intern at Davine Technologies</strong>, working hands-on with EC2, VPC, IAM, and high-availability infrastructure. Alongside that, I've built four end-to-end DevOps/SRE projects spanning EKS, Jenkins, Terraform, and full-stack observability.</p>
+      <p>I'm actively looking for entry-level <strong>DevOps, Cloud, SRE, or Linux/Systems Engineer roles</strong> where I can contribute and grow.</p>
       <div class="edu">
         <div class="edu-item">
           <div class="edu-deg">M.Sc. Computer Science</div>
@@ -495,37 +532,36 @@
     <div class="reveal">
       <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;font-family:var(--mono)">// Certifications</p>
       <div class="certs">
-        <!-- NEW cert -->
         <div class="cert">
-          <div class="cert-icon">—</div>
+          <div class="cert-icon">•</div>
           <div>
-            <div class="cert-name">Kubernetes: Your First Project <span class="cert-new">New</span></div>
-            <div class="cert-org">LinkedIn Learning · 2026</div>
+            <div class="cert-name">Introduction to Containers, Kubernetes, OpenShift <span class="cert-new">New</span></div>
+            <div class="cert-org">IBM · 2026</div>
           </div>
         </div>
         <div class="cert">
-          <div class="cert-icon">—</div>
+          <div class="cert-icon">•</div>
           <div>
             <div class="cert-name">Jenkins for Beginners</div>
             <div class="cert-org">SimpliLearn · 2025</div>
           </div>
         </div>
         <div class="cert">
-          <div class="cert-icon">—</div>
+          <div class="cert-icon">•</div>
           <div>
             <div class="cert-name">Python Programming</div>
             <div class="cert-org">Scaler · 2025</div>
           </div>
         </div>
         <div class="cert">
-          <div class="cert-icon">—</div>
+          <div class="cert-icon">•</div>
           <div>
             <div class="cert-name">Linux Fundamentals</div>
             <div class="cert-org">Alison · 2025</div>
           </div>
         </div>
         <div class="cert">
-          <div class="cert-icon">—</div>
+          <div class="cert-icon">•</div>
           <div>
             <div class="cert-name">Docker for Developers</div>
             <div class="cert-org">Le Wagon · 2025</div>
@@ -543,7 +579,8 @@
   <div class="contact-wrap reveal">
     <div class="section-tag">Get In Touch</div>
     <h2 class="section-title" style="margin-bottom:1rem;">Let's Work Together</h2>
-    <p>I'm actively looking for junior DevOps, Cloud Engineer, or SRE roles. If you're hiring or want to collaborate, feel free to reach out!</p>
+    <p>I'm actively looking for entry-level DevOps, Cloud, SRE, or Linux/Systems Engineer roles. If you're hiring or want to collaborate, feel free to reach out!</p>
+    <div class="contact-phone">+91-9342700944</div>
     <div class="contact-links">
       <a class="contact-btn contact-btn-light" href="mailto:srinithiyaofficial@gmail.com">
         srinithiyaofficial@gmail.com
@@ -559,7 +596,7 @@
 </section>
 
 <footer>
-  Built by Srinithiya M · Thanjavur, Tamil Nadu, India · 2025
+  Built by Srinithiya M · Thanjavur, Tamil Nadu, India · 2026
 </footer>
 
 <script>
